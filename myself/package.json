@@ -12,6 +12,7 @@
     "test": "npm run unit && npm run e2e"
   },
   "dependencies": {
+    "jquery": "^3.2.1",
     "mint-ui": "^2.2.7",
     "mockjs": "^1.0.1-beta3",
     "vue": "^2.2.1",

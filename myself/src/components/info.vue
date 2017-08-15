@@ -1,5 +1,6 @@
 <template>
-    <div>        
+    <div>  
+            
         <div class="cont" :class="{'hide':$store.getters.type.status==false}">
             <p><span>姓名：</span>{{$store.getters.name}}</p>
             <p><span>年龄：</span>{{$store.getters.age}}</p>
@@ -17,11 +18,8 @@
         name:'header',
         data (){
             return {
-                msg:"父组件的值"
+                msg:"父组件的值",
             }
-        },
-        created (){
-            this.$router.push('info');
         },
         components: {work},
         methods:{
@@ -32,6 +30,9 @@
                 alert(child)
             }
            
+        },
+        mounted(){
+            console.log($(this.el))
         }
     })
 </script>
