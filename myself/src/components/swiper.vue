@@ -1,15 +1,13 @@
 <template>
-    <div class="swiper-wrap">
+    <div class="swiper-wrap" @mouseover="autoPlayStop" @mouseout="autoPlayStart(0)">
         <p>
-        	<img  :src="sildeArr[nowIndex]['src']" alt="">
-        
+        	<img  :src="sildeArr[nowIndex]" >       
         </p>
         <p class="sli-page">
         	<span @click="goto(prev)">&lt;</span>
         	<span v-for="(item,index) in sildeArr" :style="{'color': nowIndex == index ? active : unActive}" @click="goto(index)">{{index+1}}</span>
         	<span @click="goto(next)">&gt;</span>
         </p>
-
     </div>
 </template>
 <script>
@@ -29,7 +27,7 @@ export default({
 		active:{//索引选中颜色
 			default: '#ccc',
 		},
-		time:{
+		autoPlaytime:{
 			type:Number,
 			default:3000
 		}
@@ -37,7 +35,8 @@ export default({
 	},
 	data(){
 		return {
-			nowIndex:0
+			nowIndex:0,
+			autoPlaytype:true
 		}
 	},
 	computed:{
@@ -59,9 +58,22 @@ export default({
 	},
 	methods:{
 		goto(index){
-			console.log(index)
 			this.nowIndex=index
+		},
+		autoPlayStop(){
+			let _this=this;
+			clearInterval(_this.autoPlaytype)
+		},
+		autoPlayStart(i){
+			let _this=this;
+			_this.autoPlaytype=setInterval(()=>{
+				_this.goto(_this.next)
+			},_this.autoPlaytime)
+			
 		}
+	},
+	mounted(){
+		this.autoPlayStart();
 	}
 })
 </script>	

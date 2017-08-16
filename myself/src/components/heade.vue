@@ -1,6 +1,6 @@
 <template>
     <div>
-        <swiper :sildeArr="img" unActive="#888" active="#fff" ></swiper>  
+        <swiper :sildeArr="img" :autoPlaytime="time" unActive="#888" active="#fff" ></swiper>  
         <nav>
            <router-link :to="{path:'/heade/info'}">我的信息</router-link>
            <router-link :to="{path:'/heade/more'}">更多</router-link>
@@ -18,7 +18,8 @@
 	    name:'header',
         data(){
             return{
-                img:[]
+                img:[],
+                time:2000
             }
         },
 	    created (){
