@@ -2,7 +2,8 @@ const state={
 	user:{
         name:'吴红月',
         age:'24',
-        phone:'13370123965'
+        phone:'13370123965',
+        emil:'768028030@qq.com'
     },
     type:{
         status:true,
@@ -18,6 +19,7 @@ const getters={
 	name: ({user}) => user.name,
     age: ({user}) => user.age,
     phone:({user})=>user.phone,
+    emil: ({user}) => user.emil,
     type:({type})=>type,
     more:({info})=>info  
 

@@ -1,1 +1,1 @@
-export var list=[{name:"饿哦的二二而我居然",info:"55453455434<br/>38428423848923<br/>38428423848923"},{name:"饿哦的二二而我居111",info:"grgretetertertretretetetret<br/>38428423848923<br/>38428423848923"}]
+export let list=[{name:"北京靠谱前程网络技术有限公司",worktime:"2016年3月—2017年7月",info:"负责UI切图，精准还原UI，开发可复用插件，使用ajax进行json数据处理交互。使用vue对部分页面进行重构。"},{name:"苏州热拍信息技术有限公司",worktime:"2014年3月—2016年3月",info:"负责UI切图，精准还原UI，使用json和ajax和php配合负责全部前端技术从页面展示到数据处理"}]

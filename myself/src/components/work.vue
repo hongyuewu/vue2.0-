@@ -1,25 +1,39 @@
 <template>
     <div class='cont'>
-        <h2>经历</h2>
+        <h2>工作经历</h2>
         <dl v-for="(item, index) in dataList">
-        	<dt>{{item.name}}</dt>
+        	<dt><em></em>{{item.name}}</dt>
+            <dd class="times">{{item.worktime}}</dd>
         	<dd>
-        	    <p>工作内容</p>
         	    <p><span v-html="item.info"></span></p>
         	</dd>
         </dl>
-        <p @click="childCall('我是子元素的值')">点击</p>
-        <img :src="'../assets/'+img" />
-        <img src="../assets/logo.png"/>
+        <p class="green-text" @click="childCall('我是子元素的值')">其他</p>
+        <img :src='img' />
     </div>    
 </template>
 <style scoped type="text/css">
     .cont dl{
         margin-bottom: 10px;
     }
+     .cont dl dt{
+        line-height: 20px;
+        padding: 5px 0;
+     }
+    .cont dl dt em{
+        border-right: 3px solid #42B983; 
+        margin-right: 3px; 
+    }
+    .cont dl .times{
+        color: #555;
+        font-size: 14px
+    }
     .cont dl p{
         line-height: 26px;
         word-wrap: break-word
+    }
+    .green-text{
+        color: #42B983
     }
 </style>
 <script type="text/javascript">
@@ -33,7 +47,7 @@
 	    data(){
             return {
                 dataList:list,
-                img:"logo.png"
+                img:require('../assets/logo.png')
             }
         },
         methods:{
