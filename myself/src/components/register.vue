@@ -24,64 +24,64 @@
          </div>
     </div>
 </template>
-<style type="text/css" scoped="scoped">
+<style lang="scss" type="text/css" scoped="scoped">
 
 .r-cont{
     padding: 15px 20px;
-   height: 100%;
-   box-sizing: border-box;
-   background-color: #F1B796;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #F1B796;
+    h2{
+        color:#fff;
+        height:80px;
+        line-height:80px
+    }
+    dl{
+        overflow: hidden;
+        padding: 10px 0;
+        font-size: 14px;
+        color: #fff;
+        dt{
+            float: left;
+            width: 100px;
+            text-align: right;
+            line-height: 35px;
+
+        }
+        dd{
+            display: block;
+            input{
+                height: 31px;
+                padding: 0 10px;
+                border: 0 none;
+            }
+        }
+    }
+    a {
+        color: #777;
+        width: 90%;
+        height: 40px;
+        line-height: 40px;
+        background-color: #fff;
+        border-radius: 5px;
+        display: inline-block;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+    .btn{
+        display: inline-block;
+        padding: 0 10px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 3px;
+        margin: 50px 0;
+        box-shadow: 0 0 5px 2px #DCDCDC;
+    }
+
    
 }
-.r-cont h2{
-    color: #fff;
-    height: 80px;
-    line-height: 80px;
-}
 
-dl{
-    overflow: hidden;
-    padding: 10px 0;
-    font-size: 14px;
-    color: #fff;
-    
-    
-}
-	dl dt{
-	    float: left;
-	    width: 100px;
-	    text-align: right;
-	    line-height: 35px;
-	}
-	dl dd{
-	    display: block;
-	}
-	dl dd input{
-	    height: 31px;
-	    padding: 0 10px;
-	    border: 0 none;
-	    
-	}
-	a {
-    color: #777;
-    width: 90%;
-    height: 40px;
-    line-height: 40px;
-    background-color: #fff;
-    border-radius: 5px;
-    display: inline-block;
-    text-decoration: none;
-    box-sizing: border-box;
-}
-	.btn{
-    display: inline-block;
-    padding: 0 10px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 3px;
-    margin: 50px 0;
-    box-shadow: 0 0 5px 2px #DCDCDC;
-}
+	
 </style>
 <script type="text/javascript">
 import Vue from 'vue'

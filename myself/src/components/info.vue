@@ -44,27 +44,5 @@
 <style type="text/css"  scoped>
     .hide{
         display: none;
-    }
-    nav {
-        display: flex;
-        border-bottom: 5px solid #f5f5f5;
-    }
-    nav a{
-        flex: 1;
-        text-align: center;
-        line-height: 40px;
-        height: 40px;
-        background-color:#cdcdcd ;
-        color: #fff;
-        text-decoration: none;
-        border-right:1px solid #ddd ;
-        box-sizing: border-box;
-    }
-    nav a:last-child{
-        border-left:0 none
-    } 
-    .active{
-        color: #000;
-        background-color:#fff ;
-    }     
+    }    
 </style>

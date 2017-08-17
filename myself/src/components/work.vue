@@ -12,29 +12,36 @@
         <img :src='img' />
     </div>    
 </template>
-<style scoped type="text/css">
-    .cont dl{
-        margin-bottom: 10px;
+<style lang="scss" scoped type="text/css">
+    $border_three:3px solid #42B983;
+    $m_r_3:3px;
+    $fontSize:14px;
+    $color:#555;
+    .cont{
+        dl{
+            margin-bottom:10px;
+            dt{
+                line-height:20px;
+                padding:5px 0;
+                em{
+                    border-right:$border_three;
+                    margin-right:$m_r_3
+                }
+            }
+            .times{
+                color: $color;
+                font-size: $fontSize
+            }
+            p{
+                line-height: 26px;
+                word-wrap: break-word
+            }
+        }
+        .green-text{
+            color: #42B983
+        }
     }
-     .cont dl dt{
-        line-height: 20px;
-        padding: 5px 0;
-     }
-    .cont dl dt em{
-        border-right: 3px solid #42B983; 
-        margin-right: 3px; 
-    }
-    .cont dl .times{
-        color: #555;
-        font-size: 14px
-    }
-    .cont dl p{
-        line-height: 26px;
-        word-wrap: break-word
-    }
-    .green-text{
-        color: #42B983
-    }
+    
 </style>
 <script type="text/javascript">
     import {list} from './../data';

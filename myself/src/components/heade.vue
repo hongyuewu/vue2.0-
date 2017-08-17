@@ -33,29 +33,35 @@
         components: {swiper}
 	})
 </script>
-<style type="text/css" scoped>
-    
-    nav {
-        display: flex;
-    }
-    nav a{
-        flex: 1;
-        text-align: center;
-        line-height: 40px;
-        height: 40px;
-        background-color:#cdcdcd ;
-        color: #fff;
-        text-decoration: none;
-        border-right:1px solid #ddd ;
-        box-sizing: border-box;
-    }
-    nav a:last-child{
-        border-left:0 none
-    } 
-    .active{
-        color: #000;
-        background-color:#fff ;
-    }
+<style lang="scss" scoped="" type="text/css">
+    $fontsize:16px;
+    $bgcolor:#cdcdcd;
+    $wcolor:#fff;
+    $bcolor:#000;
+
+    nav{
+        display:flex;
+        a{
+            flex: 1;
+            text-align: center;
+            line-height: 40px;
+            height: 40px;
+            background-color:$bgcolor;
+            font-size:$fontsize;
+            color: $wcolor;
+            text-decoration: none;
+            border-right:1px solid #ddd ;
+            box-sizing: border-box;
+            
+        }
+        a:last-child{
+            border-left:0 none
+        } 
+        .active{
+            color: #000;
+            background-color:#fff ;
+        }
+    }    
     .cont{
         padding: 10px;
     }

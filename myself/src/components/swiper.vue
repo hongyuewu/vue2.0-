@@ -77,7 +77,7 @@ export default({
 	}
 })
 </script>	
-<style type="text/css" scoped>
+<style lang="scss" type="text/css" scoped>
 	img{
 		width: 100%;
 	}
@@ -95,13 +95,14 @@ export default({
 
 	}
 	.swiper-wrap{
-		position: relative
+		position: relative;
+		.sli-page{
+			position: absolute;
+			bottom: 10px;
+			left: 0;
+			right: 0
+		}
 	}
-	.sli-page{
-		position: absolute;
-		bottom: 10px;
-		left: 0;
-		right: 0
-	}
+	
 
 </style>

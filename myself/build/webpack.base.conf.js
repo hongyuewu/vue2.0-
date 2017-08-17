@@ -41,8 +41,8 @@ module.exports = {
         options: vueLoaderConfig
       },
       {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
       },
       {
         test: /\.js$/,
