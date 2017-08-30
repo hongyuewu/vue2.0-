@@ -4,23 +4,24 @@
             <h2>注册</h2>
             <dl>
             	<dt>用户名：</dt>
-            	<dd><input type="text" v-model="info.userName" placeholder="请输入用户名密码" /></dd>
+            	<dd><input type="text" :class="{'inputerro':!info.userName.status}" v-model="info.userName.cont" placeholder="请输入用户名密码" /></dd>
             </dl>
             <dl>
             	<dt>密码：</dt>
-                <dd><input type="password" v-model="info.passWord" placeholder="请输入6位密码" /></dd>
-            </dl>
-            <dl>
-                <dt>再次输入密码：</dt>
-                <dd><input type="password" v-model="info.passWordAgin" placeholder="请再次输入6位密码" /></dd>
+                <dd><input type="password" :class="{'inputerro':!info.passWord.status}" v-model="info.passWord.cont" placeholder="请输入6位密码" /></dd>
             </dl>
             <dl>
                 <dt>手机号：</dt>
-                <dd><input type="number" v-tel v-model="info.tel" placeholder="请输入手机号" /></dd>
+                <dd><input type="number" :class="{'inputerro':!info.mobile.status}"  v-model="info.mobile.cont" placeholder="请输入手机号" /></dd>
+                
+            </dl>
+            <dl>
+                <dt>邮箱：</dt>
+                <dd><input type="emil" :class="{'inputerro':!info.emil.status}" v-model="info.emil.cont" placeholder="请输入邮箱" /></dd>
                 
             </dl>
        
-        <a href="javascript:;" class="btn" @click="registerFn">立即注册</a>
+        <a href="javascript:;" class="btn" @click="validateFn()">立即注册</a>
          </div>
     </div>
 </template>
@@ -55,6 +56,10 @@
                 padding: 0 10px;
                 border: 0 none;
             }
+            .inputerro{
+                background-color: #ddd;
+
+            }
         }
     }
     a {
@@ -85,20 +90,41 @@
 </style>
 <script type="text/javascript">
 import Vue from 'vue'
-import directives from '../directive';
-Vue.directive('tel', directives.tel);
+import validate from '../validate'
 import {mapActions} from 'vuex'
 import myData from '../data/aboutme';
+Vue.use(validate);
 export default{
     name:"register",
     data(){
         return {
             info:{
-                userName:'',
-                passWord:'',
-                passWordAgin:'',
-                tel:''
-            }           
+                userName:{
+                    cont:"",
+                    type:'required',
+                    reg:'',
+                    status:true
+                },
+                passWord:{
+                    cont:"",
+                    type:"required",
+                    reg:"",
+                    status:true
+                },
+                mobile:{
+                    cont:"",
+                    type:'required',
+                    reg:"mobile",
+                    status:true
+                },
+                emil:{
+                    cont:"",
+                    type:"required",
+                    reg:"emil",
+                    status:true
+                }
+            },
+            inputType:true           
         }
     },
     created(){
@@ -109,14 +135,26 @@ export default{
         });
     },
     methods:{
-        registerFn(){
-            this.$router.push('/');
-            this.rigisterInfo(this.info);
+        
+        validateFn(){
+            let validateType=true
+            for(let i in this.info){
+                if(!this.validate(this.info[i].cont,this.info[i].type,this.info[i].reg)){
+                    this.info[i].status=false
+                    return false;
+                }else{
+                    this.info[i].status=true
+                }
+            }
+            if(validateType){
+                this.$router.push('/');
+                this.rigisterInfo(this.info);
+            }
         },
         ...mapActions([     
            // 映射 this.setType() 为 this.$store.dispatch('setType')
           'rigisterInfo'
-        ])
+        ]),
     }
     
 }

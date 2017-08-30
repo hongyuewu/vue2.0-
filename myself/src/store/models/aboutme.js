@@ -56,8 +56,8 @@ const mutations={
         }
     },
     rigisterInfo({info},more){
-        if(more.userName){
-            info.name=more.userName;
+        if(more.userName.cont){
+            info.name=more.userName.cont;
         }
         if(more.passWord){
             info.password=more.passWord

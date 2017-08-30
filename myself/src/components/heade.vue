@@ -34,10 +34,16 @@
 	})
 </script>
 <style lang="scss" scoped="" type="text/css">
+@import '../sass/global';
+
+
     $fontsize:16px;
     $bgcolor:#cdcdcd;
     $wcolor:#fff;
     $bcolor:#000;
+    div{
+    margin-top:$mt10
+}
 
     nav{
         display:flex;
